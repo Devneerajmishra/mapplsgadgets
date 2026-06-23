@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Visitor Counter</title>
+
+    <style>
+        body{
+            font-family: Arial;
+            text-align:center;
+            margin-top:100px;
+        }
+
+        .counter{
+            font-size:40px;
+            color:blue;
+            font-weight:bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>My Website</h1>
+
+    <div class="counter" id="visitorCount">
+        Visitors: 0
+    </div>
+
+    <script>
+
+        // Get old count
+        let count = localStorage.getItem("visitCount");
+
+        // If first visit
+        if(count === null){
+            count = 0;
+        }
+
+        // Increase count
+        count++;
+
+        // Save new count
+        localStorage.setItem("visitCount", count);
+
+        // Show on screen
+        document.getElementById("visitorCount").innerText =
+            "Visitors: " + count;
+
+    </script>
+
+</body>
+</html>
